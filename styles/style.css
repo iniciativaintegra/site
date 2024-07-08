@@ -1,0 +1,790 @@
+body {
+    padding:0;
+}
+
+* {
+    font-family: "League Spartan", sans-serif;
+}
+
+.body {
+    background-color: #F2EEEB;
+    margin: 0;
+}
+
+header {
+    padding: 5px;
+    margin-top: 3px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1100; /* Acima do overlay */
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    height: 50px;
+    z-index: 1100; /* Acima do overlay */
+}
+
+.menu-icon div {
+    width: 35px;
+    height: 4px;
+    background-color: #DE8938;
+    margin: 4px 0;
+    transition: 0.4s;
+    border-radius: 2px;
+}
+
+.menu {
+    display: none; /* Esconder o menu completo inicialmente */
+    flex-direction: column;
+}
+
+.menu a {
+    color: #3B3738;
+    text-decoration: none;
+    border-top: 1px solid #444;
+}
+
+.submenu, .submenu-resources {
+    display: none;
+    background-color: #DE8938;
+    padding: 10px;
+}
+
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+   /* background-color: #3B3738;*/
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    z-index: 1000;
+    transition: max-height 400ms ease-out;
+    max-height: 0;
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    padding: 10px;
+    color: #F2EEEB;
+}
+
+.menu-icon.open .bar1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-icon.open .bar2 {
+    opacity: 0;
+}
+
+.menu-icon.open .bar3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.mobile-menu.open {
+    max-height: 500px;
+    overflow-y: hidden;
+   
+}
+
+.mobile-menu.open a {
+    color: #F2EEEB;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3B3738;
+    z-index: 900; /* Abaixo do menu mobile e do header */
+    transition: opacity 300ms ease-out;
+}
+
+.overlay.open {
+    display: block;
+}
+
+footer{
+    text-align: center;
+    padding:2px;
+}
+footer p{
+    font-size: 11px;
+}
+
+footer p{
+    margin-top: 0;
+}
+
+#cover {
+    position: relative;
+    width: 100%;
+    height: 260px; /* Ajuste a altura conforme necessário */
+    background-image: url('../img/menino.jpg'); /* Caminho para sua imagem */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.cover h3{
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFDDB8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+#cover h3{
+    font-size: 18px;
+    margin:0;
+    align-items: center;
+    text-align: center;
+
+}
+
+#cover img{
+    margin-left: 5px;
+}
+
+h2{
+    font-size: 25px;
+}
+
+
+
+.retangle{
+    border: 2px solid #FFDDB8;
+    border-radius: 30px;
+    padding: 2%;
+    text-align: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+
+
+.sec-home h2{
+    color: #DE8938;
+    text-align: center;
+}
+
+h3{
+    font-size: 17px;
+    margin: 0;
+}
+
+button{
+    background-color: #DE8938;
+    border: none;
+    border-radius: 88px;
+    width: 170px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer
+}
+
+#button{
+    background-color: #DE8938;
+    border: none;
+    border-radius: 88px;
+    width: 170px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    color: #F2EEEB;
+    font-weight: bold;
+}
+
+.entrada h2{
+    color: #DE8938;
+}
+
+#button h3{
+    color: #F2EEEB;
+}
+
+
+button h3{
+    color: #F2EEEB;
+}
+
+p{
+    font-size: 14px;
+    color: #3B3738;
+    padding-left: 10px;
+}
+
+.juntese p{
+    color: #3B3738;
+}
+
+.juntese{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.artigosrecentes {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+    position: relative; /* Adicione para posicionar as setas relativas a este container */
+}
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.artigo {
+    flex: 0 0 100%; /* Um artigo por vez */
+    background-color: #FFDDB8;
+    width: 260px;
+    height: auto;
+    padding-top: 0;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px; /* Espaço entre os artigos */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse a div */
+    margin-top: 15px;
+}
+
+.artigo-index {
+    flex: 0 0 100%; /* Um artigo por vez */
+    background-color: #FFDDB8;
+    width: 260px;
+    height: 260px;
+    padding-top: 0;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px; /* Espaço entre os artigos */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse a div */
+    margin-top: 15px;
+}
+
+.tit-artigo {
+    height: 37px;
+    background-color: #3B3738;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse a div */
+    text-overflow: ellipsis; /* Adiciona reticências caso o texto seja muito longo */
+    white-space: nowrap; /* Mantém o texto em uma única linha */
+
+}
+
+.conteudo{
+    color: #3B3738;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse a div */
+    word-wrap: break-word; /* Permite a quebra de linhas */
+    flex-grow: 1; /* Faz a div crescer para ocupar o espaço disponível */
+}
+
+.cont-autor{
+    padding: 10px;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse a div */
+    text-overflow: ellipsis; /* Adiciona reticências caso o texto seja muito longo */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Faz a div ocupar todo o espaço disponível */
+    box-sizing: border-box; /* Inclui padding e border no cálculo do height */
+}
+
+.autor{
+    color: #3B3738;
+    font-size: 11px;
+    text-align: right; /* Alinha o nome do autor à direita */
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%; /* Ajusta para o meio verticalmente */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.0);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.5rem;
+    width: 30px;
+}
+
+.carousel-prev {
+    left: -30px; /* Ajusta a posição esquerda */
+}
+
+.carousel-next {
+    right: -30px; /* Ajusta a posição direita */
+}
+
+
+.carousel-inner {
+    display: flex;
+    gap: 10px; /* Espaço entre os artigos */
+    transition: transform 0.5s ease;
+    padding: 10px; /* Adiciona um espaçamento interno para evitar que as setas fiquem muito próximas dos artigos */
+}
+
+
+.artigo h2{
+    color: #FFDDB8;
+}
+
+.contato-form h2{
+color: #DE8938;
+text-align: center;
+align-items: center;
+}
+
+.contato-form{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#name, #email{
+    background-color: #3B3738;
+    width: 90%;
+    border-radius: 6px;
+    border: none;
+    height: 25px;
+    color: #F2EEEB;
+    text-align: center;
+}
+
+#name::placeholder, #email::placeholder{
+    color: #F2EEEB;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+}
+
+#message::placeholder{
+    color: #3B3738;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#titulo, #nomeautor{
+    background-color: #3B3738;
+    width: 90%;
+    border-radius: 6px;
+    border: none;
+    height: 25px;
+    color: #F2EEEB;
+    text-align: center;
+}
+
+#titulo::placeholder, #nomeautor::placeholder{
+    color: #F2EEEB;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+}
+
+#nomeautor{
+    margin-top: 13px;
+}
+
+#button{
+    margin-top: 15px;
+}
+
+#contactForm button{
+    color: #F2EEEB;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#message{
+    border: none;
+    background-color: #FFDDB8;
+    height: 170px;
+    width: 90%;
+    text-align: center;
+    color: #3B3738;
+    align-items: center;
+    border-radius: 15px;
+}
+
+#artigo{
+    border: none;
+    background-color: #FFDDB8;
+    height: auto;
+    width: 90%;
+    text-align: center;
+    color: #3B3738;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.form-infos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#cover-sobre {
+    position: relative;
+    width: 100%;
+    height: 260px; /* Ajuste a altura conforme necessário */
+    background-image: url('../img/cover-sobre.png'); /* Caminho para sua imagem */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#sobreh2{
+    color: #DE8938;
+    text-align: center;
+}
+
+.login-container h2{
+    color: #DE8938;
+    text-align: center;
+}
+
+.login-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#password, #emaillogin{
+    background-color: #3B3738;
+    width: auto;
+    max-width: 400px;
+    min-width: 200px;
+    border-radius: 6px;
+    border: none;
+    height: 25px;
+    color: #F2EEEB;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#password::placeholder, #emaillogin::placeholder{
+    color: #F2EEEB;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+}
+
+
+.integrante {
+/* Um artigo por vez */
+    background-color: #FFDDB8;
+    width: 260px;
+    min-height: 280px;
+    height: auto;
+    padding-top: 0;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px; /* Espaço entre os artigos */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nome{
+    height: 35px;
+    background-color: #3B3738;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.integrantes{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.conteudo img{
+    border-radius: 50%;
+}
+
+.artigos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.datas{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.img-projeto{
+    text-align: center;
+    align-items: center;
+}
+
+.projeto img{
+    width: 300px;
+}
+
+.doc{
+    width: 85%;
+    height: 25px;
+    background-color: #FFDDB8;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 6px 0 6px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.doc img{
+    width: 20px;
+}
+
+.doc h3{
+    color: #3B3738;
+    text-align: center;
+}
+
+.docs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.curso{
+    width: 85%;
+    height: auto;
+    min-height: 200px;
+    background-color: #FFDDB8;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.curso h3{
+    text-align: center;
+    color: #3B3738;
+}
+
+.curso img{
+    width: 70px;
+    border-radius: 10px;
+}
+
+.texto-img{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.curso p{
+    margin-left: 15px;
+    text-align: justify;
+}
+
+.cursos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link-curso{
+    text-align: center;
+    
+}
+
+.link-curso a{
+    text-decoration: none;
+    color: #DE8938;
+    font-weight: bold;
+}
+
+.disque{
+    width: 85%;
+    height:25px ;
+    background-color: #FFDDB8;
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+
+}
+
+.disque h3{
+    color: #3B3738;
+}
+
+.endereco h3{
+color: #3B3738;
+text-align: center;
+}
+
+.local h3{
+    text-align: center;
+    color: #3B3738;
+}
+
+.local img{
+    width: 80px;
+    border-radius: 8px;
+}
+
+.local{
+    width: 85%;
+    height: auto;
+    min-height: 160px;
+    background-color: #FFDDB8;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.locais{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.voluntario-form{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.voluntario-form input{
+    width: 85%;
+    height: auto;
+    min-height: 25px;
+    background-color: #3B3738;
+    border-radius: 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #F2EEEB;
+
+}
+
+.voluntario-form select{
+    width: 86%;
+    min-height: 28px;
+    background-color: #3B3738;
+    border-radius: 6px;
+    color: #F2EEEB;
+    border: none;
+}
+
+.voluntario-form textarea{
+    width: 85%;
+    min-height: 80px;
+    height: auto;
+    max-height: 120;
+    background-color: #3B3738;
+    border-radius: 6px;
+    color: #F2EEEB;
+    border: none;
+}
+
+.voluntario-form input::placeholder{
+    color: #F2EEEB;
+    font-size: 15px;
+    font-weight: 550;
+    text-align: center;
+    align-items: center;
+}
+
+.voluntario-form textarea::placeholder{
+    color: #F2EEEB;
+    font-size: 15px;
+    font-weight: 550;
+    text-align: center;
+    align-items: center;
+}
+
+
+.voluntario-form select{
+    color: #F2EEEB;
+    font-size: 15px;
+    font-weight: 550;
+    text-align: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+/*personalizar barra em navegadores baseados em chrome*/
+select::-webkit-scrollbar {
+    background-color: #3B3738; /* cor de fundo da barra de rolagem */
+    width: 12px; /* largura da barra de rolagem */
+}
+select::-webkit-scrollbar-thumb {
+    background-color: #DE8938; /* cor do botão de arrasto */
+    border-radius: 6px; /* borda arredondada do botão de arrasto */
+}
+
+::-webkit-scrollbar {
+    background-color: #F2EEEB; /* cor de fundo da barra de rolagem */
+    width: 12px; /* largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #DE8938; /* cor do botão de arrasto */
+    border-radius: 6px; /* borda arredondada do botão de arrasto */
+}
+
+::-webkit-scrollbar-button {
+    display: none; /* oculta os botões de seta */
+}
+
+
+
