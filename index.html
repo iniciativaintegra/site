@@ -1,0 +1,149 @@
+<!DOCTYPE html >
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciativa Integra</title>
+    <link rel="shortcut icon" href="img/LogoTab.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/style.css" media="all" />
+    <link rel="stylesheet" href="styles/media-query.css" />
+    <script src="backend/script.js"></script>
+    <!-- Carregando jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body id="body" class="body">
+    <header>
+        <a href="index.html">
+            <div class="logo"><img src="img/INlogo.png" alt=""></div>
+        </a>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <nav class="menu">
+            <div class="menu-item">
+                <a href="#">Sobre ▼</a>
+                <div class="submenu">
+                    <a href="conhecaaequipe.html">Conheça a Equipe</a>
+                    <div class="line"></div>
+                    <a href="contato.html">Contato</a>
+                    <div class="line"></div>
+                    <a href="projetos.html">Projetos</a>
+                    <div class="line"></div>
+                    <a href="sobre.html">Sobre a Iniciativa</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Recursos ▼</a>
+                <div class="submenu-resources">
+                    <a href="educacao.html">Educação e Recursos</a>
+                    <div class="line"></div>
+                    <a href="apoiopsicologico.html">Apoio Psicológico</a>
+                </div>
+            </div>
+            <a href="artigos.html">Artigos</a>
+            <a href="voluntariese.html">Voluntarie-se</a>
+            <a href="areaequipe.html">Área da equipe</a>
+        </nav>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="sobre.html">Sobre</a>
+        <a href="areaequipe.html">Área da Equipe</a>
+        <a href="artigos.html">Artigos</a>
+        <a href="contato.html">Contato</a>
+        <a href="voluntariese.html">Voluntarie-se</a>
+        <a href="educacao.html">Educação e Recursos</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="conhecaaequipe.html">Conheça a Equipe</a>
+        <a href="apoiopsicologico.html">Apoio Psicológico</a>
+    </div>
+
+    <main>
+        <section class="sec-home">
+            <div class="cover" id="cover"><!--imagem-->
+                <div class="retangle">
+
+                <a href="sobre.html"><div><h3>Nossa missão <div class="arrow" id="arrow1"><img src="img/seta.svg" alt=""></div></h3>
+                
+                    
+                
+                </div></div></a>
+            </div>
+
+            <div class="juntese">
+            <h2>Junte-se a nós!</h2>
+
+            <p>Você está pronto para fazer a diferença no Vale do Mucuri? Junte-se à Iniciativa Integra como voluntário e ajude a transformar vidas por meio da educação e do acesso à informação. Seja parte de um movimento que promove igualdade de oportunidades e impacta positivamente a comunidade. Traga suas habilidades, energia e paixão para nossa equipe e contribua para um futuro melhor. Inscreva-se agora e faça a diferença!</p>
+
+            <center>
+            <a href="voluntariese.html"><button><h3>Inscreva-se aqui</h3></button></a>
+        </center>
+        </div>
+
+        </section>
+        <section class="artigosrecentes">
+            <button id="carousel-prev" class="carousel-prev"><img src="img/prev.svg" alt="" height="30px"></button>
+            <button id="carousel-next" class="carousel-next"><img src="img/next.svg" alt="" height="30px"></button>
+            <div class="carousel">
+                <div class="carousel-inner" id="artigosSection">
+                    <!-- Aqui serão inseridos dinamicamente os artigos -->
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer id="footer">
+        <a href="https://instagram.com/iniciativaintegra">
+            <div><img src="img/ig.svg" alt=""></div>
+        </a>
+        <p>Iniciativa Integra. Todos os direitos reservados. 2024.</p>
+    </footer>
+
+    <script>
+       $(document).ready(function () {
+    $.ajax({
+        url: 'https://script.google.com/macros/s/AKfycbyZeU74ZaYb9T51VikORPpUiqkvy23YJ0z5e6ISPfz6t9keYvnl_IyHhDp5cf6GQbmW/exec',
+        type: 'GET',
+        dataType: 'json', // Isso garantirá que a resposta seja interpretada como JSON automaticamente
+        success: function (response) {
+            console.log(response); // Adiciona um log para ver a resposta bruta
+            try {
+                var artigos = response; // Se dataType for 'json', response já é um objeto
+                var artigosHTML = '';
+
+                artigos.forEach(function (artigo) {
+                    artigosHTML += `
+                     <a href="artigos.html">
+                    <center>
+                        <div class="artigo-index">
+                            <div class="tit-artigo"><h2>${artigo.titulo}</h2></div>
+                            <div class="cont-autor">
+                                <p class="conteudo">${artigo.artigo}</p>
+                                <p class="autor">By: ${artigo.nomeautor}</p>
+                                <p class="data">Data de envio: ${artigo.data}</p>
+                            </div>
+                        </div>
+                        </center></a>
+                    `;
+                });
+
+                $('#artigosSection').html(artigosHTML);
+            } catch (error) {
+                console.error("Erro ao processar a resposta JSON: ", error);
+                alert('Erro ao carregar os artigos.');
+            }
+        },
+        error: function () {
+            alert('Erro ao carregar os artigos.');
+        }
+    });
+});
+    </script>
+</body>
+
+</html>
