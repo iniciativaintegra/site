@@ -408,7 +408,7 @@ width: 300px;
         box-sizing: border-box; /* Inclui padding e border no tamanho total */
     }
     .artigosrecentes {
-        width: 91%;
+        width: 90%;
         margin: 0 auto;
         padding: 20px 0;
         position: relative; /* Adicione para posicionar as setas relativas a este container */
