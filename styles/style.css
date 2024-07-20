@@ -524,7 +524,6 @@ align-items: center;
 
 
 .integrante {
-/* Um artigo por vez */
     background-color: #FFDDB8;
     width: 260px;
     min-height: 280px;
@@ -560,7 +559,8 @@ align-items: center;
 }
 
 .conteudo img{
-    border-radius: 50%;
+    border-radius: 0 0 15% 15%;
+    border: solid 4px #DE8938;
 }
 
 .artigos{
