@@ -810,3 +810,7 @@ select::-webkit-scrollbar-thumb {
 .voluntario-form input{
     text-align: center;
 }
+
+textarea{
+    text-align: center;
+}
