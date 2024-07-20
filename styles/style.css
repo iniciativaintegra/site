@@ -124,6 +124,10 @@ footer p{
     font-size: 11px;
 }
 
+footer p {
+    text-align: center;
+}
+
 footer p{
     margin-top: 0;
 }
@@ -235,8 +239,13 @@ button h3{
 p{
     font-size: 14px;
     color: #3B3738;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: justify;
+}
+
+.logo{
+    padding-left: 10px;
 }
 
 .juntese p{
