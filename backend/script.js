@@ -9,6 +9,27 @@
                 body.classList.toggle('open');
             }
 
+            function toggleCourses() {
+                const coursesContainer = document.getElementById('cursos');
+                const overlay = document.getElementById('overlay');
+                const body = document.getElementById('body');
+                const logo = document.querySelector('.logo');
+                const menuIcon = document.querySelector('.menu-icon');
+                const menu = document.querySelector('.menu');
+                
+                coursesContainer.classList.toggle('open');
+                overlay.classList.toggle('open');
+                body.classList.toggle('open');
+                
+                // Toggle hidden class on logo and menu
+                logo.classList.toggle('hidden');
+                menuIcon.classList.toggle('hidden');
+                menu.classList.toggle('hidden');
+            }
+            
+            
+            
+
             document.addEventListener('DOMContentLoaded', (event) => {
                 const prevButton = document.querySelector('.carousel-prev');
                 const nextButton = document.querySelector('.carousel-next');

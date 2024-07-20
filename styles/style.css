@@ -635,11 +635,20 @@ align-items: center;
     margin-bottom: 15px;
 }
 
+.curso-desktop h3{
+    text-align: center;
+    color: #3B3738;
+}
+
 .curso h3{
     text-align: center;
     color: #3B3738;
 }
 
+.curso-desktop img{
+    width: 70px;
+    border-radius: 10px;
+}
 .curso img{
     width: 70px;
     border-radius: 10px;
@@ -653,6 +662,11 @@ align-items: center;
 }
 
 .curso p{
+    margin-left: 15px;
+    text-align: justify;
+}
+
+.curso-destop p{
     margin-left: 15px;
     text-align: justify;
 }
@@ -838,4 +852,82 @@ footer a{
     padding-left: 25px;
     padding-right: 22px;
     padding-bottom: 10px;
+}
+
+.cursos {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed; /* Mudar de relative para fixed */
+    top: 0; /* Ajustar para garantir que o contêiner comece do topo */
+    width: 90%; /* Ajustar conforme necessário */
+    height: 100%; /* Ocupa a altura total da tela */
+    padding: 20px; /* Ajustar conforme necessário */
+    background-color: #3B3738; /* Ajustar conforme necessário */
+    z-index: 1000; /* Garantir que o contêiner esteja acima de outros elementos */
+    overflow-y: auto; /* Permitir rolagem vertical se necessário */
+    transition: opacity 300ms ease-out;
+}
+
+.cursos.open {
+    display: flex;
+    opacity: 1;
+    transition: opacity 300ms ease-out;
+}
+
+.overlay.open {
+    display: block;
+    transition: opacity 300ms ease-out;
+    /* Outros estilos aqui */
+}
+
+/* Estilos para o botão de fechar */
+.close-courses-btn {
+    display: block;
+    position: fixed; /* Mudar de absolute para fixed */
+    top: 10px; /* Ajuste conforme necessário */
+    right: 10px; /* Ajuste conforme necessário */
+    background-color: #DE8938;
+    color: #FFDDB8;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001; /* Garantir que o botão esteja acima de outros elementos */
+    transition: opacity 300ms ease-out;
+}
+
+/* Ajustes para o botão */
+.show-courses-btn {
+    display: block;
+    transition: opacity 300ms ease-out;
+    /* Outros estilos aqui */
+}
+
+.curso-desktop, .curso-desktop div{
+    display: none;
+}
+
+/* Ajustes para o body quando o overlay está ativo */
+.body.open {
+    overflow: hidden;
+    transition: opacity 300ms ease-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.blog-h2{
+    color: #DE8938;
+    text-align: center;
+    padding-left:30px;
+    padding-right: 30px;
+    font-size: 29.5px
+}
+
+#sobreh2-cursos{
+    color: #DE8938;
+    text-align: center;
 }
