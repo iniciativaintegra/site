@@ -116,3 +116,122 @@
 </body>
 
 </html>
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Área da equipe</title>
+    <link rel="shortcut icon" href="img/LogoTab.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/style.css" media="all" />
+    <link rel="stylesheet" href="styles/media-query.css" />
+    <script src="backend/script.js"></script>
+    <script>
+        // Verificar se o usuário está logado
+        if (localStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "loginequipe.html";
+        }
+        function logout() {
+            // Remover informação de login do localStorage
+            localStorage.removeItem("loggedIn");
+            // Redirecionar para a página de login
+            window.location.href = "loginequipe.html";
+        }
+    </script>
+</head>
+
+<body id="body" class="body">
+    <header>
+        <a href="index.html">
+            <div class="logo"><img src="img/INlogo.png" alt=""></div>
+        </a>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <nav class="menu">
+            <div class="menu-item">
+                <a href="#">Sobre ▼</a>
+                <div class="submenu">
+                    <a href="conhecaaequipe.html">Conheça a Equipe</a>
+                    <div class="line"></div>
+                    <a href="contato.html">Contato</a>
+                    <div class="line"></div>
+                    <a href="projetos.html">Projetos</a>
+                    <div class="line"></div>
+                    <a href="sobre.html">Sobre a Iniciativa</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Recursos ▼</a>
+                <div class="submenu-resources">
+                    <a href="educacao.html">Educação e Recursos</a>
+                    <div class="line"></div>
+                    <a href="apoiopsicologico.html">Apoio Psicológico</a>
+                </div>
+            </div>
+            <a href="artigos.html">Artigos</a>
+            <a href="voluntariese.html">Voluntarie-se</a>
+        </nav>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="sobre.html">Sobre</a>
+        <a href="areaequipe.html">Área da Equipe</a>
+        <a href="artigos.html">Artigos</a>
+        <a href="contato.html">Contato</a>
+        <a href="voluntariese.html">Voluntarie-se</a>
+        <a href="educacao.html">Educação e Recursos</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="conhecaaequipe.html">Conheça a Equipe</a>
+        <a href="apoiopsicologico.html">Apoio Psicológico</a>
+    </div>
+
+    <main>
+        <section class="contato-form">
+            <h2>Criar artigo</h2>
+            <form id="artigoForm" action="https://script.google.com/macros/s/AKfycbyZeU74ZaYb9T51VikORPpUiqkvy23YJ0z5e6ISPfz6t9keYvnl_IyHhDp5cf6GQbmW/exec" method="post">
+                <div class="form-infos">
+                    <center></center>
+                    <input type="text" id="titulo" name="titulo" required placeholder="Digite o título..."><br></div>
+                    <center>
+                        <textarea id="artigo" name="artigo" required placeholder="Digite aqui..."></textarea><br>
+                    
+                    <input type="text" id="nomeautor" name="nomeautor" required placeholder="Digite o nome do autor..."><br>
+                
+               
+                <center><input type="submit" id="button" value="Enviar"></center>
+            </form>
+        </section>
+
+        <section class="entrada">
+            <center><h2>Pedidos de entrada na Iniciativa</h2></center>
+            <a href="https://docs.google.com/spreadsheets/d/1yCGz3OG1JHj0aNKEKPBtJtloqt8yYeKPI9UjcN-wXr4/edit?usp=sharing">
+            <center><button><h3>Consultar</h3></button></center><br></a>
+        </section>
+
+        <section class="entrada">
+            <center><h2>Pedidos de contato</h2></center>
+            <a href="https://docs.google.com/spreadsheets/d/1Rf8n_9N1YRWv1sliOAKUYv_c_Li2vBKfAE9Q6WzXCoM/edit?usp=sharing">
+            <center><button><h3>Consultar</h3></button></center><br></a>
+        </section>
+
+        <section class="logout">
+            <center><button onclick="logout()"><h3>Sair/Logout</h3></button></center><br>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <a href="https://instagram.com/iniciativaintegra">
+            <div><img src="img/ig.svg" alt=""></div>
+        </a>
+        <p>Iniciativa Integra. Todos os direitos reservados. 2024.</p>
+    </footer>
+
+    
+</body>
+
+</html>
