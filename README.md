@@ -1,2 +1,2 @@
 # site
-Siste da Iniciativa Integra
+Site da Iniciativa Integra
