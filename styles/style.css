@@ -832,3 +832,10 @@ footer a{
     font-weight: bold;
     
 }
+
+.integrante p{
+    text-align: left;
+    padding-left: 25px;
+    padding-right: 22px;
+    padding-bottom: 10px;
+}
