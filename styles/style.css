@@ -813,5 +813,10 @@ select::-webkit-scrollbar-thumb {
 
 textarea{
     text-align: center;
-    
+
+}
+
+footer a{
+    color: #DE8938;
+    font-weight: bold;
 }
