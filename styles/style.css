@@ -942,8 +942,9 @@ footer a{
 
 ul li{
     color: #3B3738;
-    margin-left: 22px;
+    margin-left: 0px;
 }
+
 
 ul li p{
     padding-left: 10px;
