@@ -416,6 +416,7 @@ header{
     align-items: center;
     width: auto;
     margin-left: 0;
+    padding-right: 25px;
 }
 
 
@@ -423,6 +424,8 @@ header{
     width:300%;
     padding: 25px;
 }
+
+
 
 .curso-desktop{
     width: 85%;
