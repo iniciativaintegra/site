@@ -9,6 +9,7 @@
                 body.classList.toggle('open');
             }
 
+            
             function toggleCourses() {
                 const coursesContainer = document.getElementById('cursos');
                 const overlay = document.getElementById('overlay');
