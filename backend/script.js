@@ -9,7 +9,6 @@
                 body.classList.toggle('open');
             }
 
-            
             function toggleCourses() {
                 const coursesContainer = document.getElementById('cursos');
                 const overlay = document.getElementById('overlay');
@@ -28,9 +27,6 @@
                 menu.classList.toggle('hidden');
             }
             
-            
-            
-
             document.addEventListener('DOMContentLoaded', (event) => {
                 const prevButton = document.querySelector('.carousel-prev');
                 const nextButton = document.querySelector('.carousel-next');
