@@ -955,13 +955,18 @@ ul li{
 
 
 ul li p{
-    padding-left: 0;
+    padding-left: 10px;
 }
 
 ul {
-    list-style-position: inside;
-    
-  }
+    list-style-type: disc; /* Define o tipo de marcador, pode ser 'circle', 'square', etc. */
+    padding-left: 20px; /* Adiciona espaçamento interno à esquerda para o marcador */
+}
+
+li {
+    margin-bottom: 10px; /* Adiciona espaço entre os itens da lista */
+    line-height: 1.5; /* Ajusta a altura da linha para melhor alinhamento do texto */
+}
 
 
 .blog a{
