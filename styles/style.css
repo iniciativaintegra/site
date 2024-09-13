@@ -627,13 +627,12 @@ align-items: center;
 
 .curso{
     width: 85%;
-    height: 700px;
-    min-height: 200px;
     background-color: #FFDDB8;
     border-radius: 20px;
     padding: 10px;
     margin-bottom: 15px;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .curso-desktop h3{
