@@ -627,7 +627,7 @@ align-items: center;
 
 .curso{
     width: 85%;
-    height: auto;
+    height: 700px;
     min-height: 200px;
     background-color: #FFDDB8;
     border-radius: 20px;
