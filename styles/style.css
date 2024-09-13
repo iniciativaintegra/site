@@ -663,7 +663,7 @@ align-items: center;
 
 .curso p{
     margin-left: 15px;
-    text-align: justify;
+    text-align: left;
 }
 
 .curso-destop p{
