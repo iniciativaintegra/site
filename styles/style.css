@@ -959,10 +959,8 @@ ul li p{
 }
 
 ul {
-    padding: 0;
-  }
-  li {
-    padding: 0; /* Remove o padding padrão do item */
+    list-style-position: inside;
+    
   }
 
 
