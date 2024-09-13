@@ -958,6 +958,17 @@ ul li p{
     padding-left: 0;
 }
 
+ul {
+    list-style-position: inside; /* Faz com que o marcador fique dentro da área de conteúdo do item */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    list-style-position: inside;
+  }
+  li {
+    margin: 0; /* Remove a margem padrão do item */
+    padding: 0; /* Remove o padding padrão do item */
+  }
+
 
 .blog a{
     font-weight: 700;
