@@ -787,6 +787,11 @@ text-align: center;
     align-items: center;
 }
 
+.voluntario-form p{
+    text-align: center;
+}
+
+
 
 .voluntario-form select{
     color: #F2EEEB;
